@@ -8,17 +8,8 @@ nested_list = [
  [1, 2, None],
 ]
 
-#
-# class ListItem:
-#     def __init__(self, value: Any, prev_list_item: 'ListItem'= None):
-#         self.value = value
-#         self.prev_list_item = prev_list_item
-
 
 class MyList(list):
-    # def __init__(self, list):
-    #     self.tail: ListItem = None
-
     def __iter__(self):
         self.main_cursor = -1
         return self
@@ -31,9 +22,6 @@ class MyList(list):
 
 
 class Item(list):
-    # def __init__(self, list):
-    #     self.tail: ListItem = None
-
     def __iter__(self):
         self.inner_cursor = -1
         return self
@@ -43,9 +31,6 @@ class Item(list):
         if len(self) == self.inner_cursor:
             raise StopIteration
         return str(self[self.inner_cursor])
-
-    # def append(self, value: Any):
-    #     super().append((value, value))
 
 
 my_list = MyList(nested_list)
